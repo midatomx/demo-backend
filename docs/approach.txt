@@ -1,0 +1,87 @@
+Realiza un Proyecto Java para un catalogo de marcas de autos que contenga:
+
+- Maven y SpringBoot
+
+- En Java:
+  --Capa Controlar
+  ---Capa:
+  ----  Servicio Interface e Implementacion
+  ----  DAO Repository
+  ----  Interface y/o Implementacion
+
+- En cualquier BD Local (Maria DB, My SQL, etc.)
+  - Crear una tabla (un catálogo con id, clave, descripcion, y que contenga más campos, etc.) con un script.
+    - Guardar el script.
+    - El ID deberá ser autoincremental o secuencia
+    - Crear indice o constraint para el campo clave.
+
+- Conectarse desde el proyecto Java con JDBCTemplate, Hibernate, JPA
+
+- Crear 2 servicios rest:
+  - GET () - Recuperará todos los registros de la tabla en formato json. Regresar HttpStatus 200 OK.
+        Si no hay registros regresar HttpStatus 404 Not Found.
+  - POST () - Guardará un json Body en la BD y regresar ese mismo json pero con el id con el que se guardó y HttpStatus 201 Created
+        Si no se guarda el registro regresar HttpStatus 400 Bad Request
+	@requestBody
+
+- Versionar el proyecto en gitlab de ser posible, de no serlo manejarlo de forma local con sus respectivos screenshot de los comandos.
+
+- Posteriormente deberán clonar el repositorio(En local tomar screenshot del proceso).
+
+
+------------------------------------------------------------------------------
+                       E  N  T  R  E  G  A  B  L  E  S
+                            DATE: abr.12th, 2024
+------------------------------------------------------------------------------
+
+1- Tecnologías usadas:
+  1.1	Java 11 (JPA y Hibernate)
+  1.2 Springboot 2.7.x
+  1.3	Tomcat 9.0.x
+  1.4	Mysql 8.0
+
+2- Planteamiento de la solución
+-------------------------------
+  2.1 Entidades
+      prospect. Prospectos(C=Crea, R=Lista, U=Solo el estado, D=Borra)
+        name,
+        firstname,
+        lastname,
+        address,
+        city,
+        state,
+        email,
+        phone,
+        comments,
+        active
+
+      cartype. Tipos de automoviles (CRUD)
+        id
+        key
+        description
+        active
+
+        Data
+        ----
+          1- Sports Utility Vehicle.
+          2- Hatchback
+          3- Crossover
+          4- Convertible
+          5- Sedan
+          6- Sports Car
+          7- Coupe
+          8- Minivan
+          9- Station Wagon
+          10- Pickup's
+
+3- Test's
+---------
+  + Servicios
+  + Repositorios
+
+4- Documentación incluida (carpeta: /docs)
+  4.1 approach.txt - Planteamiento del problema
+  4.2 der.pdf - Diagrama entidad relación
+  4.3 TATA demo - API REST.postman_collection.json - Colección postman
+
+5- Video de funcionamiento.
